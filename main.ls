@@ -40,6 +40,16 @@ rough-history =
   * t \0000-00-00 'Two-column layout for tablets'       <[@hlb]>
   * t \0000-00-00 'Toggle between Pinyin and Bopomofo'  <[@matic]>
   * t \0000-00-00 'Volume key on Android resizes fonts' <[@ivan]>
-  * t \2013-03-23 '填寫閩南語字典辭典文字資料索取單'    <[@au]>
+  * t \2013-03-23 '填寫閩南語字典辭典文字資料索取單'    <[@au]>          2
+  * t \2013-03-25 '台文眾包 OCR'                        <[so many]>      2
+  * t \2013-03-27 '教育部的 xls 資料庫'                 <[教育部]>       2
+  * t \2013-03-30 'xls2csv'                             <[@au]>          3
+  * t \2013-04-15 'csv2JSON'                            <[@au]>          3
+  * t \2013-11-23 '決定保持規範性、合理使用、CC-BY-ND'  <[教育部]>       1
+  * t \0000-00-00 '萌典啄木鳥'                          <[so many]>
+  * t \0000-00-00 '筆順動畫'                            <[]>
+  * t \0000-00-00 '萌典娘'                              <[]>
+  * t \0000-00-00 '字宙反應爐'                          <[]>
+  * t \0000-00-00 '英法德字典'                          <[]>
 
 console.log rough-history
