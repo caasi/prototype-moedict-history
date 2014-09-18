@@ -1,7 +1,9 @@
 #!/usr/bin/lsc
+require! fs
 require! hackpad
 
 {2:key, 3:secret, 4:pad-id, 5:site} = process.argv
+console.log site
 
 if not (key and secret and pad-id)
   {1:filename} = /.*\/(.*)/exec process.argv.1
@@ -11,4 +13,7 @@ if not (key and secret and pad-id)
 options = site: site if site
 client = new hackpad key, secret, options
 err, revisions <- client.revisions pad-id
-console.log JSON.stringify revisions, null, 2
+if err
+  console.error err
+  process.exit 1
+fs.writeFile "#pad-id.json", JSON.stringify(revisions, null, 2)

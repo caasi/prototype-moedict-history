@@ -1,17 +1,3 @@
-{ port: 443,
-  host: 'hackpad.com',
-  https: true,
-  path: '/api/1.0/pad/krYNczYQzTI/revisions',
-  oauth_signature: 
-   { algo: 'sha1',
-     encoding: 'base64',
-     name: 'HMAC-SHA1',
-     consumer: 
-      { oauth_consumer_key: 'rAwvR9u1O2d',
-        oauth_consumer_secret: '8DYYhGinUcbbPHsLz0WBWxDwVgtMTR1o' },
-     token: undefined },
-  method: 'GET',
-  headers: { 'Content-Length': 0 } }
 [
   {
     "htmlDiff": "<div class=\"author-diff-header\">Edited by <span style='border-bottom: 2px dotted #53af98;'><a href='https://hackpad.com/ep/profile/rE0fDrkSRsN' style='text-decoration: none;'>Hsingyu Li</a></span> - 2 years ago</div>\n<div  style='border-left-color: white;border-left-style: solid; border-left-width: 6px; padding-left: 20px; max-width:640px'  class=\"ace-line gutter-author-p-32658 emptyGutter\"><a style=\"border-bottom:none; color: #000001; text-decoration:none;\" href=\"https://hackpad.com/krYNczYQzTI?src=email-line&eid=290e79ef-7a5a-48d5-aa82-7ef0a8482112#:1481889668\"><span style='color: #999' class=\"author-p-32658\">3du.tw </span><span style='border-bottom: 2px dotted transparent' class=\"author-p-32658 added\">@</span><span style='color: #999' class=\"author-p-32658 longkeep\">g0v hackath1n |&nbsp; </span><span style='color: #999' class=\"author-p-32658 b longkeep\"><b>台灣零時政府</b></span><span style='color: #999' class=\"author-p-32658 longkeep\">第壹次公地放領</span><span style='color: #999' class=\"author-p-32658 b longkeep\"><b>黑客松</b></span></a></div>\n<div  style='border-left-color: white;border-left-style: solid; border-left-width: 6px; padding-left: 20px; max-width:640px'  class=\"ace-line longKeep gutter-noauthor\"><a style=\"border-bottom:none; color: #000001; text-decoration:none;\" href=\"https://hackpad.com/krYNczYQzTI?src=email-line&eid=290e79ef-7a5a-48d5-aa82-7ef0a8482112#:0\">&nbsp;</a></div>\n",
