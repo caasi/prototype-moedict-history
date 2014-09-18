@@ -27,6 +27,8 @@ rough-history =
     # https://github.com/racklin/moe-dictionary-app
   * t \2013-01-30 'OS X Dictionary'                     <[@yllan]>
     # https://github.com/yllan/moedict-mac
+  * t \2013-02-01 'Hán Nôm 字體'                        <[@YaoWei]>      2
+    # https://github.com/audreyt/moedict-webkit/commit/b831afae448977e943cffdaf44aa0cb356828073
   * t \2013-02-01 '網頁版萌典加上 CC0 授權'             <[@au]>          1
     # https://github.com/audreyt/moedict-webkit/commit/70cde88ea7c7822a87b1ffae9ef97c91890bdcab
   * t \2013-02-01 'iOS Client'                          <[@tomjpsun]>
@@ -37,6 +39,8 @@ rough-history =
     # https://github.com/tonytonyjan/hahadict
   * t \2013-02-02 'Angular JS Client+Server'            <[@viirya]>
     # https://github.com/viirya/moedict-web
+  * t \2013-02-03 'URI endpoints'                       <[@au]>          4
+    # https://github.com/audreyt/moedict-webkit/commit/d29371b94536c604157da929358f1d0e5f88f3c6
   * t \2013-02-03 'WinRT Component'                     <[@ericsk]>
     # https://github.com/ericsk/moedict-rt
   * t \2013-02-04 'Sublime Text plugin'                 <[@zonble]>
@@ -45,16 +49,18 @@ rough-history =
     # https://github.com/zonble/MOEDict
   * t \2013-02-07 '資料集加上 CC0 授權'                 <[@kcwu]>        1
     # https://github.com/g0v/moedict-data/commit/67cd552606d4f9b6cc962213c4542adfc93e0ef5
+  * t \2013-02-07 'Two-column layout for tablets'       <[@hlb]>
+    # XXX: not sure
+    # https://github.com/audreyt/moedict-webkit/commit/ad257ec126db13ad341bf4dc4e55e90bba8ed612
   * t \2013-02-08 'Windows 8 App'                       <[@wenpei]>
     # https://github.com/SarsTW/moedict-win8-app
   * t \2013-02-12 'iOS Client'                          <[@jamessa]>
     # https://github.com/jamessa/MoeDict
-  * t \0000-00-00 'URI endpoints'                       <[@au]>          4
-  * t \0000-00-00 'Hán Nôm 字體'                        <[@YaoWei]>      2
+  * t \2013-02-21 'Wildcard and part-of-word searching' <[@esor]>
+    # XXX: not sure
+    # https://github.com/audreyt/moedict-webkit/commit/cbd150bfd3a520da90e54a1d312bfb6fa6094f70
   * t \0000-00-00 '花園明朝字體'                        <[]>             2
   * t \0000-00-00 '中文斷詞'                            <[]>             5
-  * t \0000-00-00 'Wildcard and part-of-word searching' <[@esor]>
-  * t \0000-00-00 'Two-column layout for tablets'       <[@hlb]>
   * t \0000-00-00 'Toggle between Pinyin and Bopomofo'  <[@matic]>
   * t \0000-00-00 'Volume key on Android resizes fonts' <[@ivan]>
   * t \2013-03-23 '填寫閩南語字典辭典文字資料索取單'    <[@au]>          2
@@ -62,11 +68,12 @@ rough-history =
   * t \2013-03-27 '教育部的 xls 資料庫'                 <[教育部]>       2
   * t \2013-03-30 'xls2csv'                             <[@au]>          3
   * t \2013-04-15 'csv2JSON'                            <[@au]>          3
-  * t \2013-11-23 '決定保持規範性、合理使用、CC-BY-ND'  <[教育部]>       1
-  * t \0000-00-00 '萌典啄木鳥'                          <[so many]>
-  * t \0000-00-00 '筆順動畫'                            <[]>
   * t \2013-05-01 '萌典娘誕生'                          <[@miau715]>
     # https://github.com/audreyt/moedict-webkit/commit/3bbab95bc847239309d0ab08e5057569d11c426e
+  * t \2013-09-28 '萌典啄木鳥'                          <[@au and thousands]>
+    # https://github.com/g0v/moedict-dodo
+  * t \2013-11-23 '決定保持規範性、合理使用、CC-BY-ND'  <[教育部]>       1
+  * t \0000-00-00 '筆順動畫'                            <[]>
   * t \0000-00-00 '字宙反應爐'                          <[]>
   * t \0000-00-00 '英法德字典'                          <[]>
 
