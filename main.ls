@@ -11,7 +11,7 @@ t = class Tag
   (@time, @title, @authors, @star = 0) ~>
 
 rough-history =
-  #   time        title                                 authors          5-star
+  ### time        title                                 authors          5-star
   * t \1996       '重編國語辭典'                        <[教育部]>
   * t \2011       '臺灣閩南語常用詞辭典'                <[教育部]>
   * t \2013-01-26 '還文於民'                            <[@pingoo]>
@@ -20,18 +20,35 @@ rough-history =
   * t \2O13-01-27 'design JSON schema from samples'     <[@pingooo]>     2
   * t \2013-01-27 'design SQL schema from samples'      <[@albb0920]>    2
   * t \2013-01-27 'parse HTML into JSON & SQLite'       <[@kcwu]>        2
+  * t \2013-01-27 'Rails API Server'                    <[@albb0920]>
+    # https://github.com/albb0920/dict-3du
   * t \2013-01-28 '眾包 OCR'                            <[so many]>      2
-  * t \0000-00-00 'XUL Desktop App'                     <[@racklin]>
-  * t \0000-00-00 'OS X Dictionary'                     <[@yllan]>
-  * t \0000-00-00 'Windows 8 App'                       <[@wenpei]>
-  * t \0000-00-00 'iOS Client'                          <[@tomjpsun @jamessa @pct]>
-  * t \0000-00-00 'iOS Offline App'                     <[@zonble]>
-  * t \0000-00-00 'Rails API Server'                    <[@albb0920]>
-  * t \0000-00-00 'Angular JS Client+Server'            <[@viirya]>
-  * t \0000-00-00 'Chrome Extension'                    <[@tonytonyjan]>
-  * t \0000-00-00 'Sublime Text plugin'                 <[@zonble]>
-  * t \0000-00-00 'WinRT Component'                     <[@eriksk]>
-  * t \0000-00-00 '合理使用與 CC0'                      <[@kcwu @au]>    1
+  * t \2013-01-29 'XUL Desktop App'                     <[@racklin]>
+    # https://github.com/racklin/moe-dictionary-app
+  * t \2013-01-30 'OS X Dictionary'                     <[@yllan]>
+    # https://github.com/yllan/moedict-mac
+  * t \2013-02-01 '網頁版萌典加上 CC0 授權'             <[@au]>          1
+    # https://github.com/audreyt/moedict-webkit/commit/70cde88ea7c7822a87b1ffae9ef97c91890bdcab
+  * t \2013-02-01 'iOS Client'                          <[@tomjpsun]>
+    # https://github.com/tomjpsun/3du.tw-ios
+  * t \2013-02-02 'iOS Client'                          <[@pct]>
+    # https://github.com/pct/moedict-ios-app
+  * t \2013-02-02 'Chrome Extension'                    <[@tonytonyjan]>
+    # https://github.com/tonytonyjan/hahadict
+  * t \2013-02-02 'Angular JS Client+Server'            <[@viirya]>
+    # https://github.com/viirya/moedict-web
+  * t \2013-02-03 'WinRT Component'                     <[@ericsk]>
+    # https://github.com/ericsk/moedict-rt
+  * t \2013-02-04 'Sublime Text plugin'                 <[@zonble]>
+    # https://github.com/zonble/sublime_moedict
+  * t \2013-02-05 'iOS Offline App'                     <[@zonble]>
+    # https://github.com/zonble/MOEDict
+  * t \2013-02-07 '資料集加上 CC0 授權'                 <[@kcwu]>        1
+    # https://github.com/g0v/moedict-data/commit/67cd552606d4f9b6cc962213c4542adfc93e0ef5
+  * t \2013-02-08 'Windows 8 App'                       <[@wenpei]>
+    # https://github.com/SarsTW/moedict-win8-app
+  * t \2013-02-12 'iOS Client'                          <[@jamessa]>
+    # https://github.com/jamessa/MoeDict
   * t \0000-00-00 'URI endpoints'                       <[@au]>          4
   * t \0000-00-00 'Hán Nôm 字體'                        <[@YaoWei]>      2
   * t \0000-00-00 '花園明朝字體'                        <[]>             2
@@ -48,7 +65,8 @@ rough-history =
   * t \2013-11-23 '決定保持規範性、合理使用、CC-BY-ND'  <[教育部]>       1
   * t \0000-00-00 '萌典啄木鳥'                          <[so many]>
   * t \0000-00-00 '筆順動畫'                            <[]>
-  * t \0000-00-00 '萌典娘'                              <[]>
+  * t \2013-05-01 '萌典娘誕生'                          <[@miau715]>
+    # https://github.com/audreyt/moedict-webkit/commit/3bbab95bc847239309d0ab08e5057569d11c426e
   * t \0000-00-00 '字宙反應爐'                          <[]>
   * t \0000-00-00 '英法德字典'                          <[]>
 
