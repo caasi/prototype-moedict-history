@@ -71,11 +71,12 @@
 	    getDefaultProps: function(){
 	      return {
 	        data: null,
+	        scale: 1 / 1000,
 	        now: moment().unix()
 	      };
 	    },
 	    render: function(){
-	      var history, i, event, timestamp, delta, j, a;
+	      var history, i, event, timestamp, delta, distance, j, a;
 	      history = this.props.data;
 	      return ol({
 	        className: 'history'
@@ -84,12 +85,14 @@
 	        for (i in ref$ = history) {
 	          event = ref$[i];
 	          timestamp = moment(event.time).unix();
-	          delta = timestamp - this.props.now;
+	          delta = this.props.now - timestamp;
+	          distance = (fn$.call(this));
+	          console.log(distance);
 	          results$.push(li({
 	            key: "event-" + i,
 	            className: 'event',
 	            style: {
-	              top: delta / 100000
+	              top: distance
 	            }
 	          }, div({
 	            className: 'time'
@@ -97,12 +100,20 @@
 	            className: 'title'
 	          }, event.title), ul({
 	            className: 'authors'
-	          }, (fn$())), div({
+	          }, (fn1$())), div({
 	            className: 'star'
 	          }, event.star)));
 	        }
 	        return results$;
 	        function fn$(){
+	          switch (false) {
+	          case !(delta >= 0):
+	            return -Math.sqrt(delta * this.props.scale);
+	          case !(delta < 0):
+	            return Math.sqrt(-delta * this.props.scale);
+	          }
+	        }
+	        function fn1$(){
 	          var ref$, results$ = [];
 	          for (j in ref$ = event.authors) {
 	            a = ref$[j];

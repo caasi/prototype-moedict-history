@@ -93,6 +93,7 @@ History = React.createClass do
   displayName: 'React.History'
   getDefaultProps: ->
     data: null
+    scale: 1 / 1000
     now:  moment!unix!
   render: ->
     history = @props.data
@@ -100,12 +101,16 @@ History = React.createClass do
       className: 'history'
       for i, event of history
         timestamp = moment(event.time)unix!
-        delta = timestamp - @props.now
+        delta = @props.now - timestamp
+        distance = switch
+          | delta >= 0 => -Math.sqrt  delta * @props.scale
+          | delta <  0 =>  Math.sqrt -delta * @props.scale
+        console.log distance
         li do
           key: "event-#i"
           className: 'event'
           style:
-            top: delta / 100000
+            top: distance
           div do
             className: 'time'
             "#{event.time}: #timestamp"
