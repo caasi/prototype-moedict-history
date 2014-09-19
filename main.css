@@ -89,6 +89,20 @@ td {
 a img {
   border: none;
 }
-.app {
+html,
+body,
+#app {
+  height: 100%;
+}
+#app {
+  position: relative;
   font-family: 'Noto Sans T Chinese';
+}
+#app .history {
+  position: absolute;
+  top: 50%;
+  margin-top: -1rem;
+}
+#app .history .event {
+  position: absolute;
 }

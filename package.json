@@ -4,6 +4,7 @@
   "description": "the rough history of moedict",
   "main": "build.js",
   "dependencies": {
+    "moment": "^2.8.3",
     "react": "^0.11.2"
   },
   "devDependencies": {

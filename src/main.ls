@@ -17,7 +17,7 @@ rough-history =
   * t \2013-01-26 '還文於民'                            <[@pingoo]>
   * t \2013-01-27 'scrap 2741 idioms as HTML'           <[@tonyq @mno2]> 3
   * t \2013-01-27 'scrap 3000 characters as raw HTML'   <[@au]>          3
-  * t \2O13-01-27 'design JSON schema from samples'     <[@pingooo]>     2
+  * t \2013-01-27 'design JSON schema from samples'     <[@pingooo]>     2
   * t \2013-01-27 'design SQL schema from samples'      <[@albb0920]>    2
   * t \2013-01-27 'parse HTML into JSON & SQLite'       <[@kcwu]>        2
   * t \2013-01-27 'Rails API Server'                    <[@albb0920]>
@@ -84,6 +84,7 @@ console.log rough-history
 
 ###
 # main
+require! moment
 React = require 'react'
 
 {ol, ul, li, div} = React.DOM
@@ -92,23 +93,31 @@ History = React.createClass do
   displayName: 'React.History'
   getDefaultProps: ->
     data: null
+    now:  moment!unix!
   render: ->
     history = @props.data
     ol do
       className: 'history'
-      for event in history
+      for i, event of history
+        timestamp = moment(event.time)unix!
+        delta = timestamp - @props.now
         li do
+          key: "event-#i"
           className: 'event'
+          style:
+            top: delta / 100000
           div do
             className: 'time'
-            event.time
+            "#{event.time}: #timestamp"
           div do
             className: 'title'
             event.title
           ul do
             className: 'authors'
-            for a in event.authors
-              li className: 'author', a
+            for j, a of event.authors
+              li do
+                key: "author-#j"
+                className: 'author', a
           div do
             className: 'star'
             event.star
