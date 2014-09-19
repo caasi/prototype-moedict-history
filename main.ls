@@ -65,17 +65,19 @@ rough-history =
   * t \2013-03-23 '填寫閩南語字典辭典文字資料索取單'    <[@au]>          2
   * t \2013-03-25 '台文眾包 OCR'                        <[so many]>      2
   * t \2013-03-27 '教育部的 xls 資料庫'                 <[教育部]>       2
-  * t \2013-03-30 'xls2csv'                             <[@au]>          3
+  * t \2013-03-30 'xls -> csv'                          <[@au]>          3
   * t \2013-04-08 'Volume key on Android resizes fonts' <[@ivan]>
     # https://github.com/audreyt/moedict-webkit/commit/feb5f7e1911446e10209c41f06de4fb0b5abf4bc
-  * t \2013-04-15 'csv2JSON'                            <[@au]>          3
+  * t \2013-04-15 'csv -> JSON'                         <[@au]>          3
+  * t \2013-04-29 '筆順動畫'                            <[@c9s]>
+    # https://github.com/c9s/zh-stroke-data/
   * t \2013-05-01 '萌典娘誕生'                          <[@miau715]>
     # https://github.com/audreyt/moedict-webkit/commit/3bbab95bc847239309d0ab08e5057569d11c426e
   * t \2013-09-28 '萌典啄木鳥'                          <[@au and thousands]>
     # https://github.com/g0v/moedict-dodo
+  * t \2013-11-01 '字宙反應爐'                          <[@au @poga @caasi @miau715]>
+    # https://github.com/audreyt/moe/
   * t \2013-11-23 '決定保持規範性、合理使用、CC-BY-ND'  <[教育部]>       1
-  * t \0000-00-00 '筆順動畫'                            <[]>
-  * t \0000-00-00 '字宙反應爐'                          <[]>
   * t \0000-00-00 '英法德字典'                          <[]>
 
 console.log rough-history
