@@ -8,7 +8,7 @@
 ###
 
 t = class Tag
-  (@time, @title, @authors, @star = 0) ~>
+  (@time = '', @title = '', @authors = [], @star = 0) ~>
 
 rough-history =
   ### time        title                                 authors          5-star
@@ -81,3 +81,38 @@ rough-history =
   #* t \0000-00-00 '英法德字典'                          <[]>
 
 console.log rough-history
+
+###
+# main
+React = require 'react'
+
+{ol, ul, li, div} = React.DOM
+
+History = React.createClass do
+  displayName: 'React.History'
+  getDefaultProps: ->
+    data: null
+  render: ->
+    history = @props.data
+    ol do
+      className: 'history'
+      for event in history
+        li do
+          className: 'event'
+          div do
+            className: 'time'
+            event.time
+          div do
+            className: 'title'
+            event.title
+          ul do
+            className: 'authors'
+            for a in event.authors
+              li className: 'author', a
+          div do
+            className: 'star'
+            event.star
+
+React.renderComponent do
+  History data: rough-history
+  document.getElementById \app
