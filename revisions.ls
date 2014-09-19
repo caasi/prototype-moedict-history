@@ -1,9 +1,8 @@
-#!/usr/bin/lsc
+#!/usr/bin/env lsc
 require! fs
 require! hackpad
 
 {2:key, 3:secret, 4:pad-id, 5:site} = process.argv
-console.log site
 
 if not (key and secret and pad-id)
   {1:filename} = /.*\/(.*)/exec process.argv.1
