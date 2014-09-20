@@ -27,7 +27,8 @@ rough-history =
   * t \2013-01-26T17:30 'scrap 2741 idioms as HTML'           <[@tonyq @mno2]>    3
   * t \2013-01-27T00:37 'design JSON schema from samples'     <[@pingooo]>        2
   * t \2013-01-27T05:36 'scrap 3000 characters as raw HTML'   <[@au]>             3
-  * t \2013-01-27       'design SQL schema from samples'      <[@albb0920]>       2
+  * t \2013-01-27T11:22 'design SQL schema from samples'      <[@albb0920]>       2
+    # https://github.com/albb0920/dict-3du/commit/12d2eaed3901096f977b3acbee20655056d11822
   * t \2013-01-27       'parse HTML into JSON & SQLite'       <[@kcwu]>           2
   * t \2013-01-27T11:22 'Rails API Server'                    <[@albb0920]>
     # https://github.com/albb0920/dict-3du
@@ -116,7 +117,7 @@ History = React.createClass do
   getDefaultProps: ->
     data: null
     now: 0
-    projector: -> Math.pow(+it, 1/2)
+    projector: -> Math.pow(+it, 1/2) / 2
   componentWillMount: ->
     @props.now = @props.data.0.timestamp
   componentWillReceiveProps: (props) ->
