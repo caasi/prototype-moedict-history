@@ -94,15 +94,49 @@ body,
 #app {
   height: 100%;
 }
+html {
+  font-size: 16pt;
+}
+body {
+  font-family: 'Noto Sans', sans-serif;
+  background: #16161d;
+}
 #app {
   position: relative;
-  font-family: 'Noto Sans T Chinese';
+  overflow: hidden;
+}
+#app .now {
+  position: absolute;
+  top: 50%;
+  left: 4rem;
+  margin-top: -0.5rem;
+  color: #f90;
+}
+#app .now:before,
+#app .now:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  border-top: 2px solid #f90;
+}
+#app .now:before {
+  right: 105%;
+  width: 4rem;
+}
+#app .now:after {
+  left: 105%;
+  width: 1000%;
 }
 #app .history {
   position: absolute;
   top: 50%;
+  width: 100%;
   margin-top: -1rem;
 }
 #app .history .event {
   position: absolute;
+  left: 16rem;
+  background: #fff;
+  line-height: 1.4rem;
 }

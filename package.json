@@ -4,6 +4,8 @@
   "description": "the rough history of moedict",
   "main": "build.js",
   "dependencies": {
+    "jquery": "^2.1.1",
+    "jquery-mousewheel": "^3.1.12",
     "moment": "^2.8.3",
     "react": "^0.11.2"
   },
