@@ -9,17 +9,20 @@
 require! moment
 
 t = class Tag
-  (time = '1970-01-01', @title = '', @authors = [], @star = 0) ~>
-    @time = moment(time)unix!
+  (@time = '1970-01-01', @title = '', @authors = [], @star = 0) ~>
+    @moment = moment @time
+    @timestamp = @moment.unix!
 
 rough-history =
   ### time              title                                 authors             5-star
-  #* t \1996            '重編國語辭典'                        <[教育部]>
-  #* t \2011            '臺灣閩南語常用詞辭典'                <[教育部]>
-  * t \2013-01-26       '還文於民'                            <[@pingoo]>
-  * t \2013-01-27       'scrap 2741 idioms as HTML'           <[@tonyq @mno2]>    3
-  * t \2013-01-27       'scrap 3000 characters as raw HTML'   <[@au]>             3
-  * t \2013-01-27       'design JSON schema from samples'     <[@pingooo]>        2
+  * t \1996-12          '重編國語辭典'                        <[教育部]>
+  * t \2011-07-07       '臺灣閩南語常用詞辭典'                <[教育部]>
+  * t \2012-06-13       '閩南語辭典加上附錄俗諺與音檔'        <[教育部]>
+  * t \2013-01-26T10:13 '還文於民'                            <[@pingoo]>
+    # http://www.plurk.com/p/i25tcc
+  * t \2013-01-26T17:30 'scrap 2741 idioms as HTML'           <[@tonyq @mno2]>    3
+  * t \2013-01-27T00:37 'design JSON schema from samples'     <[@pingooo]>        2
+  * t \2013-01-27T05:36 'scrap 3000 characters as raw HTML'   <[@au]>             3
   * t \2013-01-27       'design SQL schema from samples'      <[@albb0920]>       2
   * t \2013-01-27       'parse HTML into JSON & SQLite'       <[@kcwu]>           2
   * t \2013-01-27T11:22 'Rails API Server'                    <[@albb0920]>
@@ -33,14 +36,16 @@ rough-history =
     # https://github.com/audreyt/moedict-webkit/commit/b831afae448977e943cffdaf44aa0cb356828073
   * t \2013-02-01T04:45 '網頁版萌典加上 CC0 授權'             <[@au]>             1
     # https://github.com/audreyt/moedict-webkit/commit/70cde88ea7c7822a87b1ffae9ef97c91890bdcab
+  * t \2013-02-01T13:54 '中文斷詞'                            <[]>                5
+    # https://github.com/audreyt/moedict-webkit/commit/0988a07b93f3ec90468679beb2eef7112ac607ee
   * t \2013-02-01T15:18 'iOS Client'                          <[@tomjpsun]>
     # https://github.com/tomjpsun/3du.tw-ios
-  * t \2013-02-02T21:48 'iOS Client'                          <[@pct]>
-    # https://github.com/pct/moedict-ios-app
-  * t \2013-02-02T17:13 'Chrome Extension'                    <[@tonytonyjan]>
-    # https://github.com/tonytonyjan/hahadict
   * t \2013-02-02T03:10 'Angular JS Client+Server'            <[@viirya]>
     # https://github.com/viirya/moedict-web
+  * t \2013-02-02T17:13 'Chrome Extension'                    <[@tonytonyjan]>
+    # https://github.com/tonytonyjan/hahadict
+  * t \2013-02-02T21:48 'iOS Client'                          <[@pct]>
+    # https://github.com/pct/moedict-ios-app
   * t \2013-02-03T04:01 'URI endpoints'                       <[@au]>             4
     # https://github.com/audreyt/moedict-webkit/commit/d29371b94536c604157da929358f1d0e5f88f3c6
   * t \2013-02-03T18:09 'WinRT Component'                     <[@ericsk]>
@@ -61,11 +66,7 @@ rough-history =
   * t \2013-02-21T19:06 'Wildcard and part-of-word searching' <[@esor]>
     # https://github.com/audreyt/moedict-webkit/commit/cbd150bfd3a520da90e54a1d312bfb6fa6094f70
     # XXX: not sure
-  * t \2013-04-16T23:41 '花園明朝字體'                        <[]>                2
-    # https://github.com/g0v/moedict-epub/commit/c747467bcadd3864387efc81326186e0334e93d7
   #* t \0000-00-00 '英法德字典'                          <[]>
-  * t \2013-02-01T13:54 '中文斷詞'                            <[]>                5
-    # https://github.com/audreyt/moedict-webkit/commit/0988a07b93f3ec90468679beb2eef7112ac607ee
   #* t \0000-00-00 'Toggle between Pinyin and Bopomofo'  <[@matic]>
   * t \2013-03-23       '填寫閩南語字典辭典文字資料索取單'    <[@au]>             2
   * t \2013-03-25       '台文眾包 OCR'                        <[沒有人]>          2
@@ -74,6 +75,8 @@ rough-history =
   * t \2013-04-08T01:20 'Volume key on Android resizes fonts' <[@ivan]>
     # https://github.com/audreyt/moedict-webkit/commit/feb5f7e1911446e10209c41f06de4fb0b5abf4bc
   * t \2013-04-15       'csv -> JSON'                         <[@au]>             3
+  * t \2013-04-16T23:41 '花園明朝字體'                        <[]>                2
+    # https://github.com/g0v/moedict-epub/commit/c747467bcadd3864387efc81326186e0334e93d7
   * t \2013-04-29T18:22 '筆順動畫'                            <[@c9s @au @caasi]>
     # https://github.com/c9s/zh-stroke-data/
   * t \2013-04-30T00:09 '萌典娘誕生'                          <[@miau715]>
@@ -89,13 +92,13 @@ rough-history =
         @au 高照明副教授 林慶隆主任 丁彥平研究助理 劉寶琦研究助理 李韻如行政助理
         羅敦英專案助理 魏邦儀專案助理 許淑芬專案助理 許淑芬專案助理
       ]>
-      t \2014-03-12T14:00 '萌典與教育部會談語料庫授權與取得' contributors
+      t \2014-03-12T14:00 '萌典與教育部會談語料庫授權與取得', contributors, 1
+  * t \2013-12-26       '閩南語辭典按102年年度用字音讀修訂'   <[教育部]>
   * t \2014-08-31T00:20 'CindyLinz 把阿美語字典逐行切出來'    <[ @CindyLinz
                                                                  @miaoski   ]>    2
     # http://logbot.godfat.org/channel/g0v.tw/2014-08-31/13
   * t \2014-09-02T22:30 '阿美語萌典一校'                      <[@miaoski 沒有人]> 2
 
-console.log rough-history
 
 ###
 # main
@@ -109,12 +112,12 @@ History = React.createClass do
   getDefaultProps: ->
     data: null
     now: 0
-    projector: -> Math.sqrt(+it/1000, 1/3) * 10
+    projector: -> Math.pow(+it, 1/2)
   componentWillMount: ->
-    @props.now = @props.data.0.time
+    @props.now = @props.data.0.timestamp
   componentWillReceiveProps: (props) ->
-    props.now >?= @props.data.0.time
-    props.now <?= @props.data[*-1].time
+    props.now >?= @props.data.0.timestamp
+    props.now <?= @props.data[*-1].timestamp
   render: ->
     history = @props.data
     div do
@@ -125,7 +128,8 @@ History = React.createClass do
       ol do
         className: 'history'
         for i, event of history
-          delta = @props.now - event.time
+          hour = event.moment.hour!
+          delta = @props.now - event.timestamp
           distance =
             if delta >= 0
               -@props.projector delta
@@ -136,9 +140,15 @@ History = React.createClass do
             className: 'event'
             style:
               top: distance
+              margin-left: "#{hour * 0.5}rem"
+              z-index: i
             div do
               className: 'time'
-              moment(event.time, \X)format('YYYY-MM-DD')
+              event.moment.format switch
+                | event.time.length is 4  => 'YYYY 年'
+                | event.time.length is 7  => 'YYYY 年 MM 月'
+                | event.time.length is 10 => 'YYYY 年 MM 月 DD 日'
+                | otherwise               => 'YYYY 年 MM 月 DD 日 HH 時'
             div do
               className: 'title'
               event.title
@@ -157,19 +167,23 @@ History = React.createClass do
                   span do
                     className: 'stars'
                     "#{(for from 1 to event.star => \★)join ''}"
-                  '星開放資料'
+                  ' 星'
 
 history = React.renderComponent do
   History data: rough-history
   document.getElementById \app
 
-step = 60s * 60m * 12h
+step = 60s * 30m
 console.log step
 keys = {}
 $(window)
   ..on \keydown -> keys[it.keyCode] = on
   ..on \keyup   -> keys[it.keyCode] = off
 update = ->
+  | keys[34] is on => history.setProps now: history.props.now + step * 48 * 10
+  | keys[33] is on => history.setProps now: history.props.now - step * 48 * 10
+  | keys[39] is on => history.setProps now: history.props.now + step * 24
+  | keys[37] is on => history.setProps now: history.props.now - step * 24
   | keys[40] is on => history.setProps now: history.props.now + step
   | keys[38] is on => history.setProps now: history.props.now - step
   requestAnimationFrame update

@@ -8,7 +8,7 @@ orange    = #f90
 html, body, #app
   height 100%
 html
-  font-size 16pt
+  font-size 14pt
 body
   font-family 'Noto Sans', sans-serif
   background eigengrau
@@ -16,9 +16,10 @@ body
 #app
   position relative
   overflow hidden
+  .now, .history
+    top 66%
   .now
     position absolute
-    top 50%
     left 2rem
     margin-top -0.5rem
     color orange
@@ -38,13 +39,12 @@ body
       width 1000%
   .history
     position absolute
-    top 50%
     width 100%
-    margin-top -0.5rem
+    margin-top -2rem
     .event
       position absolute
       left 16rem
-      width 30rem
+      width 20rem
       padding 0.2rem 0.4rem
       border 0.3rem solid orange
       border-radius 0.5rem
@@ -54,7 +54,7 @@ body
       .time, .title, .authors
         margin-bottom 0.5rem
       .time
-        font-size 1.2rem
+        font-size 1.4rem
         font-weight bold
       .star-level
         float right

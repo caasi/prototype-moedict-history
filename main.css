@@ -95,7 +95,7 @@ body,
   height: 100%;
 }
 html {
-  font-size: 16pt;
+  font-size: 14pt;
 }
 body {
   font-family: 'Noto Sans', sans-serif;
@@ -105,9 +105,12 @@ body {
   position: relative;
   overflow: hidden;
 }
+#app .now,
+#app .history {
+  top: 66%;
+}
 #app .now {
   position: absolute;
-  top: 50%;
   left: 2rem;
   margin-top: -0.5rem;
   color: #f90;
@@ -132,14 +135,13 @@ body {
 }
 #app .history {
   position: absolute;
-  top: 50%;
   width: 100%;
-  margin-top: -0.5rem;
+  margin-top: -2rem;
 }
 #app .history .event {
   position: absolute;
   left: 16rem;
-  width: 30rem;
+  width: 20rem;
   padding: 0.2rem 0.4rem;
   border: 0.3rem solid #f90;
   -webkit-border-radius: 0.5rem;
@@ -154,7 +156,7 @@ body {
   margin-bottom: 0.5rem;
 }
 #app .history .event .time {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
 }
 #app .history .event .star-level {
