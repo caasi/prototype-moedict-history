@@ -152,7 +152,8 @@ History = React.createClass do
               className: 'star-level'
               if event.star
                 a do
-                  href: "http://5stardata.info/tw/\#addendum#{event.time}"
+                  href: "http://5stardata.info/tw/\#addendum#{event.star}"
+                  target: \_blank
                   span do
                     className: 'stars'
                     "#{(for from 1 to event.star => \★)join ''}"

@@ -127,7 +127,8 @@
 	          }, (fn$())), div({
 	            className: 'star-level'
 	          }, event.star ? a({
-	            href: "http://5stardata.info/tw/#addendum" + event.time
+	            href: "http://5stardata.info/tw/#addendum" + event.star,
+	            target: '_blank'
 	          }, span({
 	            className: 'stars'
 	          }, (fn1$()).join('') + ""), '星開放資料') : void 8)));
