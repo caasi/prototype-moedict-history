@@ -2,13 +2,16 @@
 
 global-reset()
 
+eigengrau = #16161d
+orange    = #f90
+
 html, body, #app
   height 100%
 html
   font-size 16pt
 body
   font-family 'Noto Sans', sans-serif
-  background #16161d
+  background eigengrau
 
 #app
   position relative
@@ -16,18 +19,20 @@ body
   .now
     position absolute
     top 50%
-    left 4rem
+    left 2rem
     margin-top -0.5rem
-    color #f90
+    color orange
+    font-size 1.4rem
+    font-weight bold
     &:before, &:after
       content ''
       position absolute
       top  50%
       margin-top -1px
-      border-top 2px solid #f90
+      border-top 2px solid orange
     &:before
       right 105%
-      width 4rem
+      width 2rem
     &:after
       left 105%
       width 1000%
@@ -35,9 +40,25 @@ body
     position absolute
     top 50%
     width 100%
-    margin-top -1rem
+    margin-top -0.5rem
     .event
       position absolute
       left 16rem
-      background white
+      width 30rem
+      padding 0.2rem 0.4rem
+      border 0.3rem solid orange
+      border-radius 0.5rem
       line-height 1.4rem
+      color eigengrau
+      background white
+      .time, .title, .authors
+        margin-bottom 0.5rem
+      .time
+        font-size 1.2rem
+        font-weight bold
+      .star-level
+        float right
+        a
+          text-decoration none
+        .stars
+          color #ffd700

@@ -108,9 +108,11 @@ body {
 #app .now {
   position: absolute;
   top: 50%;
-  left: 4rem;
+  left: 2rem;
   margin-top: -0.5rem;
   color: #f90;
+  font-size: 1.4rem;
+  font-weight: bold;
 }
 #app .now:before,
 #app .now:after {
@@ -122,7 +124,7 @@ body {
 }
 #app .now:before {
   right: 105%;
-  width: 4rem;
+  width: 2rem;
 }
 #app .now:after {
   left: 105%;
@@ -132,11 +134,35 @@ body {
   position: absolute;
   top: 50%;
   width: 100%;
-  margin-top: -1rem;
+  margin-top: -0.5rem;
 }
 #app .history .event {
   position: absolute;
   left: 16rem;
-  background: #fff;
+  width: 30rem;
+  padding: 0.2rem 0.4rem;
+  border: 0.3rem solid #f90;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
   line-height: 1.4rem;
+  color: #16161d;
+  background: #fff;
+}
+#app .history .event .time,
+#app .history .event .title,
+#app .history .event .authors {
+  margin-bottom: 0.5rem;
+}
+#app .history .event .time {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#app .history .event .star-level {
+  float: right;
+}
+#app .history .event .star-level a {
+  text-decoration: none;
+}
+#app .history .event .star-level .stars {
+  color: #ffd700;
 }
