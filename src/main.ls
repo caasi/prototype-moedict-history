@@ -12,6 +12,7 @@ t = class Tag
   (@time = '1970-01-01', @title = '', @authors = [], @star = 0) ~>
     @moment = moment @time
     @timestamp = @moment.unix!
+    @gap = Infinity
 
 rough-history =
   ### time              title                                 authors             5-star
@@ -25,14 +26,12 @@ rough-history =
   * t \2013-01-26T10:13 '還文於民'                            <[@pingoo]>
     # http://www.plurk.com/p/i25tcc
   * t \2013-01-26T17:30 'scrap 2741 idioms as HTML'           <[@tonyq @mno2]>    3
+  * t \2013-01-27       'parse HTML into JSON & SQLite'       <[@kcwu]>           2
   * t \2013-01-27T00:37 'design JSON schema from samples'     <[@pingooo]>        2
   * t \2013-01-27T05:36 'scrap 3000 characters as raw HTML'   <[@au]>             3
-  * t \2013-01-27T11:22 'design SQL schema from samples'      <[@albb0920]>       2
+  * t \2013-01-27T11:22 'design SQL schema and API Server'    <[@albb0920]>       2
     # https://github.com/albb0920/dict-3du/commit/12d2eaed3901096f977b3acbee20655056d11822
-  * t \2013-01-27       'parse HTML into JSON & SQLite'       <[@kcwu]>           2
-  * t \2013-01-27T11:22 'Rails API Server'                    <[@albb0920]>
-    # https://github.com/albb0920/dict-3du
-  * t \2013-01-28       '眾包 OCR'                            <[so many]>         2
+  * t \2013-01-28       '眾包 OCR'                            <[沒有人]>          2
   * t \2013-01-29T12:51 'XUL Desktop App'                     <[@racklin]>
     # https://github.com/racklin/moe-dictionary-app
   * t \2013-01-30T23:15 'OS X Dictionary'                     <[@yllan]>
@@ -92,17 +91,22 @@ rough-history =
     # https://github.com/audreyt/moe/
   * t \2013-11-23       '決定保持規範性、合理使用、CC-BY-ND'  <[教育部]>          1
   * t \2013-11-25T16:25 '阿美語萌典開始製作'                  <[@miaoski]>        2
+  * t \2013-12-26       '閩南語辭典按102年年度用字音讀修訂'   <[教育部]>
   * let
       contributors = <[
         @au 高照明副教授 林慶隆主任 丁彥平研究助理 劉寶琦研究助理 李韻如行政助理
         羅敦英專案助理 魏邦儀專案助理 許淑芬專案助理 許淑芬專案助理
       ]>
       t \2014-03-12T14:00 '萌典與教育部會談語料庫授權與取得', contributors, 1
-  * t \2013-12-26       '閩南語辭典按102年年度用字音讀修訂'   <[教育部]>
   * t \2014-08-31T00:20 'CindyLinz 把阿美語字典逐行切出來'    <[ @CindyLinz
                                                                  @miaoski   ]>    2
     # http://logbot.godfat.org/channel/g0v.tw/2014-08-31/13
   * t \2014-09-02T22:30 '阿美語萌典一校'                      <[@miaoski 沒有人]> 2
+
+for i from 1 til rough-history.length
+  prev = rough-history[i-1]
+  curr = rough-history[i]
+  prev.gap = curr.timestamp - prev.timestamp
 
 
 ###
@@ -117,34 +121,46 @@ History = React.createClass do
   getDefaultProps: ->
     data: null
     now: 0
-    projector: -> Math.pow(+it, 1/2) / 2
+  getInitialState: ->
+    idx: 0
   componentWillMount: ->
     @props.now = @props.data.0.timestamp
   componentWillReceiveProps: (props) ->
-    props.now >?= @props.data.0.timestamp
-    props.now <?= @props.data[*-1].timestamp
+    props.now = @props.data.0.timestamp if @props.data.0.timestamp > props.now
+    props.now = @props.data[*-1]timestamp if props.now >= @props.data[*-1]timestamp
+    for i, event of @props.data
+      break if event.timestamp > props.now
+      @state.idx = +i
+  nextStep: ->
+    now = @props.now
+    @setProps now: now + @props.data[@state.idx].gap / 60
+  prevStep: ->
+    return if @state.idx is @props.data.length - 1
+    now = @props.now
+    @setProps now: now - @props.data[@state.idx].gap / 60
   render: ->
     history = @props.data
+    distance = @props.now - history[@state.idx]timestamp
+    ratio = distance / history[@state.idx]gap
+    distance = -(@state.idx + ratio) * 300 + 300
     div do
       className: 'moedict-history'
       div do
         className: 'now'
-        moment(@props.now, \X)format('YYYY-MM-DD HH')
+        style:
+          top: 300
+        moment(@props.now, \X)format('YYYY-MM-DD HH:mm')
       ol do
         className: 'history'
+        style:
+          top: distance
         for i, event of history
           hour = event.moment.hour!
-          delta = @props.now - event.timestamp
-          distance =
-            if delta >= 0
-              -@props.projector delta
-            else if delta <  0
-              @props.projector -delta
           li do
             key: "event-#i"
             className: 'event'
             style:
-              top: distance
+              top: i * 300
               margin-left: "#{hour * 0.5}rem"
               z-index: i
             div do
@@ -185,11 +201,11 @@ $(window)
   ..on \keydown -> keys[it.keyCode] = on
   ..on \keyup   -> keys[it.keyCode] = off
 update = ->
-  | keys[34] is on => history.setProps now: history.props.now + step * 48 * 10
-  | keys[33] is on => history.setProps now: history.props.now - step * 48 * 10
-  | keys[39] is on => history.setProps now: history.props.now + step * 24
-  | keys[37] is on => history.setProps now: history.props.now - step * 24
-  | keys[40] is on => history.setProps now: history.props.now + step
-  | keys[38] is on => history.setProps now: history.props.now - step
+  #| keys[34] is on => history.setProps now: history.props.now + step * 48 * 10
+  #| keys[33] is on => history.setProps now: history.props.now - step * 48 * 10
+  #| keys[39] is on => history.setProps now: history.props.now + step * 24
+  #| keys[37] is on => history.setProps now: history.props.now - step * 24
+  | keys[40] is on => history.nextStep!
+  | keys[38] is on => history.prevStep!
   requestAnimationFrame update
 requestAnimationFrame update

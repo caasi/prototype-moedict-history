@@ -105,14 +105,9 @@ body {
   position: relative;
   overflow: hidden;
 }
-#app .now,
-#app .history {
-  top: 66%;
-}
 #app .now {
   position: absolute;
   left: 2rem;
-  margin-top: -0.5rem;
   color: #f90;
   font-size: 1.4rem;
   font-weight: bold;
@@ -135,8 +130,8 @@ body {
 }
 #app .history {
   position: absolute;
+  margin-top: -1.5rem;
   width: 100%;
-  margin-top: -2rem;
 }
 #app .history .event {
   position: absolute;
