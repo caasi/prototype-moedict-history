@@ -114,6 +114,24 @@
 	      }
 	      return results$;
 	    },
+	    next: function(){
+	      if (this.state.idx === this.props.data.length - 1) {
+	        return;
+	      }
+	      return this.setProps({
+	        now: this.props.data[this.state.idx + 1].timestamp
+	      });
+	    },
+	    prev: function(){
+	      var target;
+	      target = this.props.data[this.state.idx].timestamp;
+	      if (this.state.idx === 0 && this.props.now === target) {
+	        return;
+	      }
+	      return this.setProps({
+	        now: this.props.now === target ? this.props.data[this.state.idx - 1].timestamp : timestamp
+	      });
+	    },
 	    nextStep: function(){
 	      var now;
 	      now = this.props.now;
@@ -123,9 +141,6 @@
 	    },
 	    prevStep: function(){
 	      var now;
-	      if (this.state.idx === this.props.data.length - 1) {
-	        return;
-	      }
 	      now = this.props.now;
 	      return this.setProps({
 	        now: now - this.props.data[this.state.idx].gap / 60
@@ -222,6 +237,13 @@
 	    return keys[it.keyCode] = true;
 	  });
 	  x$.on('keyup', function(it){
+	    switch (false) {
+	    case it.keyCode !== 34:
+	      history.next();
+	      break;
+	    case it.keyCode !== 33:
+	      history.prev();
+	    }
 	    return keys[it.keyCode] = false;
 	  });
 	  update = function(){

@@ -131,11 +131,20 @@ History = React.createClass do
     for i, event of @props.data
       break if event.timestamp > props.now
       @state.idx = +i
+  next: ->
+    return if @state.idx is @props.data.length - 1
+    @setProps now: @props.data[@state.idx+1].timestamp
+  prev: ->
+    target = @props.data[@state.idx]timestamp
+    return if @state.idx is 0 and @props.now is target
+    @setProps now: if @props.now is target
+      @props.data[@state.idx-1]timestamp
+    else
+      timestamp
   nextStep: ->
     now = @props.now
     @setProps now: now + @props.data[@state.idx].gap / 60
   prevStep: ->
-    return if @state.idx is @props.data.length - 1
     now = @props.now
     @setProps now: now - @props.data[@state.idx].gap / 60
   render: ->
@@ -199,12 +208,11 @@ console.log step
 keys = {}
 $(window)
   ..on \keydown -> keys[it.keyCode] = on
-  ..on \keyup   -> keys[it.keyCode] = off
+  ..on \keyup   ->
+    | it.keyCode is 34 => history.next!
+    | it.keyCode is 33 => history.prev!
+    keys[it.keyCode] = off
 update = ->
-  #| keys[34] is on => history.setProps now: history.props.now + step * 48 * 10
-  #| keys[33] is on => history.setProps now: history.props.now - step * 48 * 10
-  #| keys[39] is on => history.setProps now: history.props.now + step * 24
-  #| keys[37] is on => history.setProps now: history.props.now - step * 24
   | keys[40] is on => history.nextStep!
   | keys[38] is on => history.prevStep!
   requestAnimationFrame update
