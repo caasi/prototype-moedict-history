@@ -21,7 +21,7 @@ rough-history =
   * t \1997-03          '重編國語辭典三版'                    <[教育部]>
   * t \1998-04          '重編國語辭典四版'                    <[教育部]>
   * t \2007-12          '重編國語辭典四版 v2'                 <[教育部]>
-  * t \2011-07-07       '臺灣閩南語常用詞辭典'                <[教育部]>
+  * t \2011-07-07       'CC BY-ND 授權的臺灣閩南語常用詞辭典' <[教育部]>          1
   * t \2012-06-13       '閩南語辭典加上附錄俗諺與音檔'        <[教育部]>
   * t \2013-01-26T10:13 '還文於民'                            <[@pingoo]>
     # http://www.plurk.com/p/i25tcc
@@ -40,7 +40,7 @@ rough-history =
     # https://github.com/audreyt/moedict-webkit/commit/b831afae448977e943cffdaf44aa0cb356828073
   * t \2013-02-01T04:45 '網頁版萌典加上 CC0 授權'             <[@au]>             1
     # https://github.com/audreyt/moedict-webkit/commit/70cde88ea7c7822a87b1ffae9ef97c91890bdcab
-  * t \2013-02-01T13:54 '中文斷詞'                            <[]>                5
+  * t \2013-02-01T13:54 '中文斷詞'                            <[@au]>             5
     # https://github.com/audreyt/moedict-webkit/commit/0988a07b93f3ec90468679beb2eef7112ac607ee
   * t \2013-02-01T15:18 'iOS Client'                          <[@tomjpsun]>
     # https://github.com/tomjpsun/3du.tw-ios
@@ -99,7 +99,7 @@ rough-history =
     # https://twitter.com/moedict/status/360507639634997253
   * t \2013-07-30T17:18 '一筆一筆寫的筆順動畫'                <[@c9s @au @caasi]>
   * t \2013-08-06T19:46 '「您敢有聽著咱的歌」，對照萌典學台語' <[@au @pektiong]>
-  * t \2013-08-16T08:23 '跨瀏覽器的 HTML5 <@ruby>的「注音、拼音直橫混排」'
+  * t \2013-08-16T08:23 '跨瀏覽器的 HTML5 <@ruby>的「注音、拼音直橫混排」' <[@ethantw]>
     # https://twitter.com/moedict/status/368166023901356032
   * t \2013-08-31T01:01 '國語辭典分類索引'                    <[@devpoga @muanchiou]>
     # https://twitter.com/moedict/status/373490682763038720
@@ -145,7 +145,7 @@ rough-history =
       ]>
       t \2014-03-12T14:00 '萌典與教育部會談語料庫授權與取得', contributors, 1
   * t \2014-03-22T11:00 '第二次萌典松'                        <[沒有人]>
-  * t \2014-03-29T11:00 '第二次萌典松'                        <[沒有人]>
+  * t \2014-03-29T11:00 '第三次萌典松'                        <[沒有人]>
   * t \2014-05-25T11:00 '第四次萌典松'                        <[沒有人]>
   * t \2014-08-02T11:00 '第五次萌典松'                        <[沒有人]>
   * t \2014-08-31T00:20 'CindyLinz 把阿美語字典逐行切出來'    <[ @CindyLinz
@@ -169,7 +169,7 @@ for i from 1 til rough-history.length
 $     = require 'jquery'
 React = require 'react'
 
-{ol, ul, li, div, span, a, small, h1} = React.DOM
+{ol, ul, li, div, span, a, small, h1, iframe} = React.DOM
 
 History = React.createClass do
   displayName: 'React.History'
@@ -217,11 +217,14 @@ History = React.createClass do
         className: 'button cc'
         onClick: ~> @setState modal: if @state.modal is \cc then null else \cc
       a do
-        className: 'button thx'
-        onClick: ~> @setState modal: if @state.modal is \thx then null else \thx
+        className: 'button osdc'
+        onClick: ~> @setState modal: if @state.modal is \osdc then null else \osdc
       a do
         className: 'button dict'
         onClick: ~> @setState modal: if @state.modal is \dict then null else \dict
+      a do
+        className: 'button thx'
+        onClick: ~> @setState modal: if @state.modal is \thx then null else \thx
       div do
         className: 'modal'
         style:
@@ -254,6 +257,15 @@ History = React.createClass do
                 className: 'id'
                 href: 'http://www.chinesecubes.com/'
                 '@chinesecubes'
+          | \osdc
+            div do
+              className: 'osdc'
+              iframe do
+                width:  640
+                height: 480
+                src: '//www.youtube.com/embed/zW69DgaMHCk'
+                frameborder: 0
+                allowfullscreen: true
           | \dict
             div do
               className: 'card dict'

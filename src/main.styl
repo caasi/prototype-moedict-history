@@ -34,12 +34,15 @@ body
     &.cc
       right 1rem
       top   1rem + button-height
-    &.dict
+    &.osdc
       right 1rem
       top   1rem + 2*button-height
-    &.thx
+    &.dict
       right 1rem
       top   1rem + 3*button-height
+    &.thx
+      right 1rem
+      top   1rem + 4*button-height
   .modal
     position absolute
     z-index 2
@@ -103,6 +106,16 @@ body
       &.dict
         .pic
           background url('./img/moedict.png')
+    .osdc
+      iframe
+        position absolute
+        left   0
+        top    0
+        right  0
+        bottom 0
+        margin auto
+        width  640
+        height 480
     .thx
       position absolute
       left   0
