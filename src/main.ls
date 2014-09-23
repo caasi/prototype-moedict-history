@@ -85,24 +85,74 @@ rough-history =
     # https://github.com/c9s/zh-stroke-data/
   * t \2013-04-30T00:09 '萌典娘誕生'                          <[@miau715]>
     # https://github.com/audreyt/moedict-webkit/commit/0c69552f633e1ba45f9ef9049c4c02da6d0c9b05
+  * t \2013-05-19T13:06 '來自《國語辭典簡編本》語音資料上線'  <[@au]>
+    # https://twitter.com/moedict/status/335984900303888385
+  * t \2013-05-23T21:31 '國台英德法跨語言萌典'                <[@racklin]>
+    # https://twitter.com/moedict/status/337561473666654208
+  * t \2013-06-03T01:34 '抵制 SOPA ，熄燈一天'                <[@au]>
+    # https://twitter.com/moedict/status/341246465005481984
+  * t \2013-06-08T19:14 '萌典客家語測試版上線'                <[@a-tsioh @pektiong]>
+    # https://twitter.com/moedict/status/343325091272224769
+  * t \2013-06-29T15:41 'Bootstrap 版萌典設計上線'            <[@hlb]>
+    # https://twitter.com/moedict/status/350881618556227584
+  * t \2013-07-26T05:11 '使用 Fira Sans OpenType 字型'        <[@espiekermann]>
+    # https://twitter.com/moedict/status/360507639634997253
   * t \2013-07-30T17:18 '一筆一筆寫的筆順動畫'                <[@c9s @au @caasi]>
-  * t \2013-09-28T15:57 '萌典啄木鳥'                          <[@au 沒有人]>
+  * t \2013-08-06T19:46 '「您敢有聽著咱的歌」，對照萌典學台語' <[@au @pektiong]>
+  * t \2013-08-16T08:23 '跨瀏覽器的 HTML5 <@ruby>的「注音、拼音直橫混排」'
+    # https://twitter.com/moedict/status/368166023901356032
+  * t \2013-08-31T01:01 '國語辭典分類索引'                    <[@devpoga @muanchiou]>
+    # https://twitter.com/moedict/status/373490682763038720
+  * t \2013-09-08T07:35 'MeeGo Harmattan 版'                  <[@RSChiang]>
+    # https://twitter.com/RSChiang/status/376488922760507392
+  * t \2013-09-15T06:25 '部首表與部首檢索'                    <[@gugod]>
+    # https://twitter.com/moedict/status/379008142350106624
+  * t \2013-09-28T15:57 '萌典啄木鳥開始'                      <[@au]>
     # https://github.com/g0v/moedict-dodo
+  * t \2013-09-29T01:00 '萌典啄木鳥上線'                      <[@au @ETBlue]>
+    # https://twitter.com/moedict/status/383999698484203520
+  * t \2013-10-03T01:44 '啄木鳥初校完成'                      <[沒有人]>
+    # https://twitter.com/moedict/status/385460295415517184
+  * t \2013-10-15T03:22 '《兩岸常用詞典》開放資料整合進萌典'  <[中華語文知識庫]>  3
+    # https://twitter.com/moedict/status/389836024618041344
+  * t \2013-10-16T12:06 '啄木鳥交叉比對完成'                  <[沒有人]>
+    # https://twitter.com/moedict/status/390146756765184000
+  * t \2013-10-30T03:03 '字詞紀錄簿上線'                      <[@au]>
+    # https://twitter.com/moedict/status/395264521238888448
   * t \2013-11-01T19:18 '字宙反應爐'                          <[@au @poga @caasi @miau715]>
     # https://github.com/audreyt/moe/
-  * t \2013-11-23       '決定保持規範性、合理使用、CC-BY-ND'  <[教育部]>          1
+  * t \2013-11-12T19:22 '「辭典啄木鳥」活動的社會組首獎'      <[沒有人]>
+    # https://twitter.com/moedict/status/400222163703058432
+  * t \2013-11-20T00:57 '萌典 Chrome 延伸套件'                <[@wildjcrt]>
+    # https://twitter.com/moedict/status/402843145806684160
+  * t \2013-11-23       '第一次萌典松。決定保持規範性、合理使用、CC-BY-ND' <[沒有人 教育部]> 1
   * t \2013-11-25T16:25 '阿美語萌典開始製作'                  <[@miaoski]>        2
+  * t \2013-12-01T04:49 '萌典字圖分享'                        <[@au]>
+    # https://twitter.com/moedict/status/406887692866052096
+  * t \2013-12-15T      '全文檢索'                            <[@au]>
+    # https://twitter.com/moedict/status/411972788199510016
+  * t \2013-12-19T17:55 '注音直式+拼音橫式混合排列正式上線'   <[@ethantw]>
+    # https://twitter.com/moedict/status/413608407711502336
   * t \2013-12-26       '閩南語辭典按102年年度用字音讀修訂'   <[教育部]>
+  * t \2014-01-12       '羅馬字檢索'                          <[@A_Tsioh]>
+    # https://twitter.com/moedict/status/422325148369162240
+  * t \2014-01-24       '成大學生讓機器人用筆畫資料寫春聯'    <[@jserv 蕭傳錡 鄭煒翰]>
+    # https://twitter.com/moedict/status/426436928330674176
   * let
       contributors = <[
         @au 高照明副教授 林慶隆主任 丁彥平研究助理 劉寶琦研究助理 李韻如行政助理
         羅敦英專案助理 魏邦儀專案助理 許淑芬專案助理 許淑芬專案助理
       ]>
       t \2014-03-12T14:00 '萌典與教育部會談語料庫授權與取得', contributors, 1
+  * t \2014-03-22T11:00 '第二次萌典松'                        <[沒有人]>
+  * t \2014-03-29T11:00 '第二次萌典松'                        <[沒有人]>
+  * t \2014-05-25T11:00 '第四次萌典松'                        <[沒有人]>
+  * t \2014-08-02T11:00 '第五次萌典松'                        <[沒有人]>
   * t \2014-08-31T00:20 'CindyLinz 把阿美語字典逐行切出來'    <[ @CindyLinz
                                                                  @miaoski   ]>    2
     # http://logbot.godfat.org/channel/g0v.tw/2014-08-31/13
   * t \2014-09-02T22:30 '阿美語萌典一校'                      <[@miaoski 沒有人]> 2
+  * t \2014-09-20T00:11 '切換語言時保留對照詞上線'            <[@au @octw]>
 
 for i from 1 til rough-history.length
   prev = rough-history[i-1]
