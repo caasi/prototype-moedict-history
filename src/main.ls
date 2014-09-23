@@ -26,17 +26,17 @@ rough-history =
   * t \2013-01-26T10:13 '還文於民'                            <[@pingoo]>
     # http://www.plurk.com/p/i25tcc
   * t \2013-01-26T17:30 'scrap 2741 idioms as HTML'           <[@tonyq @mno2]>    3
-  * t \2013-01-27       'parse HTML into JSON & SQLite'       <[@kcwu]>           2
-  * t \2013-01-27T00:37 'design JSON schema from samples'     <[@pingooo]>        2
+  * t \2013-01-27T00:37 'design JSON schema from samples'     <[@pingooo]>        3
   * t \2013-01-27T05:36 'scrap 3000 characters as raw HTML'   <[@au]>             3
-  * t \2013-01-27T11:22 'design SQL schema and API Server'    <[@albb0920]>       2
+  * t \2013-01-27T11:22 'design SQL schema and API Server'    <[@albb0920]>       3
+  * t \2013-01-27T11:23 'parse HTML into JSON & SQLite'       <[@kcwu]>           3
     # https://github.com/albb0920/dict-3du/commit/12d2eaed3901096f977b3acbee20655056d11822
-  * t \2013-01-28       '眾包 OCR'                            <[沒有人]>          2
+  * t \2013-01-28       '眾包 OCR'                            <[沒有人]>          3
   * t \2013-01-29T12:51 'XUL Desktop App'                     <[@racklin]>
     # https://github.com/racklin/moe-dictionary-app
   * t \2013-01-30T23:15 'OS X Dictionary'                     <[@yllan]>
     # https://github.com/yllan/moedict-mac
-  * t \2013-02-01T02:53 'Hán Nôm 字體'                        <[@YaoWei]>         2
+  * t \2013-02-01T02:53 'Hán Nôm 字體'                        <[@YaoWei]>
     # https://github.com/audreyt/moedict-webkit/commit/b831afae448977e943cffdaf44aa0cb356828073
   * t \2013-02-01T04:45 '網頁版萌典加上 CC0 授權'             <[@au]>             1
     # https://github.com/audreyt/moedict-webkit/commit/70cde88ea7c7822a87b1ffae9ef97c91890bdcab
@@ -67,7 +67,7 @@ rough-history =
     # https://github.com/SarsTW/moedict-win8-app
   * t \2013-02-12T10:35 'iOS Client'                          <[@jamessa]>
     # https://github.com/jamessa/MoeDict
-  * t \2013-02-21T19:06 'Wildcard and part-of-word searching' <[@esor]>
+  * t \2013-02-21T19:06 'Wildcard and part-of-word searching' <[@au @esor]>
     # https://github.com/audreyt/moedict-webkit/commit/cbd150bfd3a520da90e54a1d312bfb6fa6094f70
     # XXX: not sure
   #* t \0000-00-00 '英法德字典'                          <[]>
@@ -81,10 +81,11 @@ rough-history =
   * t \2013-04-15       'csv -> JSON'                         <[@au]>             3
   * t \2013-04-16T23:41 '花園明朝字體'                        <[]>                2
     # https://github.com/g0v/moedict-epub/commit/c747467bcadd3864387efc81326186e0334e93d7
-  * t \2013-04-29T18:22 '筆順動畫'                            <[@c9s @au @caasi]>
+  * t \2013-04-29T18:22 '筆順動畫'                            <[@c9s @au]>
     # https://github.com/c9s/zh-stroke-data/
   * t \2013-04-30T00:09 '萌典娘誕生'                          <[@miau715]>
     # https://github.com/audreyt/moedict-webkit/commit/0c69552f633e1ba45f9ef9049c4c02da6d0c9b05
+  * t \2013-07-30T17:18 '一筆一筆寫的筆順動畫'                <[@c9s @au @caasi]>
   * t \2013-09-28T15:57 '萌典啄木鳥'                          <[@au 沒有人]>
     # https://github.com/g0v/moedict-dodo
   * t \2013-11-01T19:18 '字宙反應爐'                          <[@au @poga @caasi @miau715]>
@@ -218,7 +219,6 @@ History = React.createClass do
             className: 'event'
             style:
               top: i * 300
-              margin-left: "#{hour * 0.5}rem"
               z-index: i
             div do
               className: 'time'
