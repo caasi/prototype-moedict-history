@@ -153,6 +153,10 @@ rough-history =
     # http://logbot.godfat.org/channel/g0v.tw/2014-08-31/13
   * t \2014-09-02T22:30 '阿美語萌典一校'                      <[@miaoski 沒有人]> 2
   * t \2014-09-20T00:11 '切換語言時保留對照詞上線'            <[@au @octw]>
+    # https://twitter.com/moedict/status/512997457152573442
+  * t \2014-09-20T11:00 '第六次萌典松'                        <[沒有人]>
+  * t \2014-09-21T00:47 '加上了「歷代書體」按鈕'              <[中華文化總會 @polydoris]>
+    # https://twitter.com/moedict/status/513368747990458369
 
 for i from 1 til rough-history.length
   prev = rough-history[i-1]
@@ -215,6 +219,9 @@ History = React.createClass do
       a do
         className: 'button thx'
         onClick: ~> @setState modal: if @state.modal is \thx then null else \thx
+      a do
+        className: 'button dict'
+        onClick: ~> @setState modal: if @state.modal is \dict then null else \dict
       div do
         className: 'modal'
         style:
@@ -247,6 +254,19 @@ History = React.createClass do
                 className: 'id'
                 href: 'http://www.chinesecubes.com/'
                 '@chinesecubes'
+          | \dict
+            div do
+              className: 'card dict'
+              h1 null '雙馬尾'
+              div do
+                className: 'pic'
+              span do
+                className: 'name'
+                '萌典'
+              a do
+                className: 'id'
+                href: 'https://twitter.com/moedict'
+                '@moedict'
           | \thx
             div do
               className: 'thx'

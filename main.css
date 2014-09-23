@@ -125,9 +125,13 @@ body {
   right: 1rem;
   top: 2.3rem;
 }
-#app .button.thx {
+#app .button.dict {
   right: 1rem;
   top: 3.6rem;
+}
+#app .button.thx {
+  right: 1rem;
+  top: 4.9rem;
 }
 #app .modal {
   position: absolute;
@@ -196,14 +200,21 @@ body {
   height: 195px;
   background: url("./img/coil.jpg");
 }
-#app .modal .card.cube {
+#app .modal .card.cube,
+#app .modal .card.dict {
   width: 256px;
   height: 316px;
 }
-#app .modal .card.cube .pic {
+#app .modal .card.cube .pic,
+#app .modal .card.dict .pic {
   width: 256px;
   height: 256px;
+}
+#app .modal .card.cube .pic {
   background: url("./img/cc.png");
+}
+#app .modal .card.dict .pic {
+  background: url("./img/moedict.png");
 }
 #app .modal .thx {
   position: absolute;

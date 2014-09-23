@@ -70,7 +70,7 @@
 	      var contributors;
 	      contributors = ['@au', '高照明副教授', '林慶隆主任', '丁彥平研究助理', '劉寶琦研究助理', '李韻如行政助理', '羅敦英專案助理', '魏邦儀專案助理', '許淑芬專案助理', '許淑芬專案助理'];
 	      return t('2014-03-12T14:00', '萌典與教育部會談語料庫授權與取得', contributors, 1);
-	    }.call(this)), t('2014-03-22T11:00', '第二次萌典松', ['沒有人']), t('2014-03-29T11:00', '第二次萌典松', ['沒有人']), t('2014-05-25T11:00', '第四次萌典松', ['沒有人']), t('2014-08-02T11:00', '第五次萌典松', ['沒有人']), t('2014-08-31T00:20', 'CindyLinz 把阿美語字典逐行切出來', ['@CindyLinz', '@miaoski'], 2), t('2014-09-02T22:30', '阿美語萌典一校', ['@miaoski', '沒有人'], 2), t('2014-09-20T00:11', '切換語言時保留對照詞上線', ['@au', '@octw'])
+	    }.call(this)), t('2014-03-22T11:00', '第二次萌典松', ['沒有人']), t('2014-03-29T11:00', '第二次萌典松', ['沒有人']), t('2014-05-25T11:00', '第四次萌典松', ['沒有人']), t('2014-08-02T11:00', '第五次萌典松', ['沒有人']), t('2014-08-31T00:20', 'CindyLinz 把阿美語字典逐行切出來', ['@CindyLinz', '@miaoski'], 2), t('2014-09-02T22:30', '阿美語萌典一校', ['@miaoski', '沒有人'], 2), t('2014-09-20T00:11', '切換語言時保留對照詞上線', ['@au', '@octw']), t('2014-09-20T11:00', '第六次萌典松', ['沒有人']), t('2014-09-21T00:47', '加上了「歷代書體」按鈕', ['中華文化總會', '@polydoris'])
 	  ];
 	  for (i$ = 1, to$ = roughHistory.length; i$ < to$; ++i$) {
 	    i = i$;
@@ -176,6 +176,13 @@
 	            modal: this$.state.modal === 'thx' ? null : 'thx'
 	          });
 	        }
+	      }), a({
+	        className: 'button dict',
+	        onClick: function(){
+	          return this$.setState({
+	            modal: this$.state.modal === 'dict' ? null : 'dict'
+	          });
+	        }
 	      }), div({
 	        className: 'modal',
 	        style: {
@@ -205,6 +212,17 @@
 	            className: 'id',
 	            href: 'http://www.chinesecubes.com/'
 	          }, '@chinesecubes'));
+	        case 'dict':
+	          return div({
+	            className: 'card dict'
+	          }, h1(null, '雙馬尾'), div({
+	            className: 'pic'
+	          }), span({
+	            className: 'name'
+	          }, '萌典'), a({
+	            className: 'id',
+	            href: 'https://twitter.com/moedict'
+	          }, '@moedict'));
 	        case 'thx':
 	          return div({
 	            className: 'thx'

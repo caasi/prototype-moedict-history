@@ -34,9 +34,12 @@ body
     &.cc
       right 1rem
       top   1rem + button-height
-    &.thx
+    &.dict
       right 1rem
       top   1rem + 2*button-height
+    &.thx
+      right 1rem
+      top   1rem + 3*button-height
   .modal
     position absolute
     z-index 2
@@ -88,13 +91,18 @@ body
           width  195px
           height 195px
           background url('./img/coil.jpg')
-      &.cube
+      &.cube, &.dict
         width  256px
         height 316px
         .pic
           width  256px
           height 256px
+      &.cube
+        .pic
           background url('./img/cc.png')
+      &.dict
+        .pic
+          background url('./img/moedict.png')
     .thx
       position absolute
       left   0
