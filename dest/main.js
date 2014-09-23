@@ -1,5 +1,5 @@
 (function(){
-  var moment, t, Tag, roughHistory, i$, to$, i, prev, curr, $, React, ref$, ol, ul, li, div, span, a, History, history, step, keys, x$, update;
+  var moment, t, Tag, roughHistory, i$, to$, i, prev, curr, $, React, ref$, ol, ul, li, div, span, a, small, h1, History, history, step, keys, x$, update;
   moment = require('moment');
   t = Tag = (function(){
     Tag.displayName = 'Tag';
@@ -34,7 +34,7 @@
   }
   $ = require('jquery');
   React = require('react');
-  ref$ = React.DOM, ol = ref$.ol, ul = ref$.ul, li = ref$.li, div = ref$.div, span = ref$.span, a = ref$.a;
+  ref$ = React.DOM, ol = ref$.ol, ul = ref$.ul, li = ref$.li, div = ref$.div, span = ref$.span, a = ref$.a, small = ref$.small, h1 = ref$.h1;
   History = React.createClass({
     displayName: 'React.History',
     getDefaultProps: function(){
@@ -45,7 +45,8 @@
     },
     getInitialState: function(){
       return {
-        idx: 0
+        idx: 0,
+        modal: null
       };
     },
     componentWillMount: function(){
@@ -101,22 +102,79 @@
       });
     },
     render: function(){
-      var history, distance, ratio, i, event, hour, j, author;
+      var history, distance, ratio, i, event, hour, j, author, this$ = this;
       history = this.props.data;
       distance = this.props.now - history[this.state.idx].timestamp;
       ratio = distance / history[this.state.idx].gap;
       distance = -(this.state.idx + ratio) * 300 + 300;
       return div({
         className: 'moedict-history'
-      }, div({
+      }, a({
+        className: 'button me',
+        onClick: function(){
+          return this$.setState({
+            modal: this$.state.modal === 'me' ? null : 'me'
+          });
+        }
+      }), a({
+        className: 'button cc',
+        onClick: function(){
+          return this$.setState({
+            modal: this$.state.modal === 'cc' ? null : 'cc'
+          });
+        }
+      }), a({
+        className: 'button thx',
+        onClick: function(){
+          return this$.setState({
+            modal: this$.state.modal === 'thx' ? null : 'thx'
+          });
+        }
+      }), div({
+        className: 'modal',
+        style: {
+          display: !this.state.modal ? 'none' : 'block'
+        }
+      }, (function(){
+        switch (this.state.modal) {
+        case 'me':
+          return div({
+            className: 'card caasi'
+          }, h1(null, '講者'), div({
+            className: 'pic'
+          }), span({
+            className: 'name'
+          }, '卡西/黃冠霖'), a({
+            className: 'id',
+            href: 'https://twitter.com/caasih'
+          }, '@caasih'));
+        case 'cc':
+          return div({
+            className: 'card cube'
+          }, h1(null, '服務單位'), div({
+            className: 'pic'
+          }), span({
+            className: 'name'
+          }, 'ChineseC', small(null, 'UBES')), a({
+            className: 'id',
+            href: 'http://www.chinesecubes.com/'
+          }, '@chinesecubes'));
+        case 'thx':
+          return div({
+            className: 'thx'
+          }, '謝謝您撥空聆聽！');
+        }
+      }.call(this))), div({
         className: 'now',
         style: {
-          top: 300
+          top: 300,
+          opacity: this.state.modal ? 0.33 : 1
         }
       }, moment(this.props.now, 'X').format('YYYY-MM-DD HH:mm')), ol({
         className: 'history',
         style: {
-          top: distance
+          top: distance,
+          opacity: this.state.modal ? 0.33 : 1
         }
       }, (function(){
         var ref$, results$ = [];

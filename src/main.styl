@@ -2,8 +2,11 @@
 
 global-reset()
 
-eigengrau = #16161d
-orange    = #f90
+eigengrau     = #16161d
+orange        = #f90
+orange-light  = #fA0
+button-dim    = 1rem
+button-height = button-dim + 0.3rem
 
 html, body, #app
   height 100%
@@ -16,6 +19,95 @@ body
 #app
   position relative
   overflow hidden
+  .button
+    position absolute
+    display block
+    width  button-dim
+    height button-dim
+    border-radius 0.2rem
+    background orange
+    &:hover
+      background orange-light
+    &.me
+      right 1rem
+      top   1rem
+    &.cc
+      right 1rem
+      top   1rem + button-height
+    &.thx
+      right 1rem
+      top   1rem + 2*button-height
+  .modal
+    position absolute
+    z-index 2
+    left   0
+    top    0
+    right  0
+    bottom 0
+    width  80%
+    height 80%
+    margin auto
+    border-radius 1rem
+    background white
+    box-shadow 0.2rem 0.2rem 0.6rem rgba(0,0,0,0.5)
+    .card
+      position absolute
+      left   0
+      top    0
+      right  0
+      bottom 0
+      margin auto
+      h1
+        position absolute
+        top   -1.6rem
+        width 10rem
+        font-weight bold
+        font-size 2rem
+        color #eee
+        z-index -1
+      small
+        font-size 0.85rem
+      .pic
+        border-radius 0.5rem
+        box-shadow 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.5)
+        margin-bottom 0.5rem
+      .name, .id
+        display block
+      .name
+        font-weight bold
+        margin-bottom 0.3rem
+      .id
+        color #999
+        text-decoration none
+        &:hover
+          text-decoration underline
+      &.caasi
+        width  195px
+        height 255px
+        .pic
+          width  195px
+          height 195px
+          background url('./img/coil.jpg')
+      &.cube
+        width  256px
+        height 316px
+        .pic
+          width  256px
+          height 256px
+          background url('./img/cc.png')
+    .thx
+      position absolute
+      left   0
+      top    0
+      right  0
+      bottom 0
+      margin auto
+      width  10em
+      font-size   4rem
+      font-weight bold
+      height 4rem
+      line-height 4rem
+      text-align center
   .now
     position absolute
     left 2rem

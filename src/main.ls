@@ -114,7 +114,7 @@ for i from 1 til rough-history.length
 $     = require 'jquery'
 React = require 'react'
 
-{ol, ul, li, div, span, a} = React.DOM
+{ol, ul, li, div, span, a, small, h1} = React.DOM
 
 History = React.createClass do
   displayName: 'React.History'
@@ -123,6 +123,7 @@ History = React.createClass do
     now: 0
   getInitialState: ->
     idx: 0
+    modal: null
   componentWillMount: ->
     @props.now = @props.data.0.timestamp
   componentWillReceiveProps: (props) ->
@@ -154,15 +155,62 @@ History = React.createClass do
     distance = -(@state.idx + ratio) * 300 + 300
     div do
       className: 'moedict-history'
+      a do
+        className: 'button me'
+        onClick: ~> @setState modal: if @state.modal is \me then null else \me
+      a do
+        className: 'button cc'
+        onClick: ~> @setState modal: if @state.modal is \cc then null else \cc
+      a do
+        className: 'button thx'
+        onClick: ~> @setState modal: if @state.modal is \thx then null else \thx
+      div do
+        className: 'modal'
+        style:
+          display: if not @state.modal then 'none' else 'block'
+        switch @state.modal
+          | \me
+            div do
+              className: 'card caasi'
+              h1 null '講者'
+              div do
+                className: 'pic'
+              span do
+                className: 'name'
+                '卡西/黃冠霖'
+              a do
+                className: 'id'
+                href: 'https://twitter.com/caasih'
+                '@caasih'
+          | \cc
+            div do
+              className: 'card cube'
+              h1 null '服務單位'
+              div do
+                className: 'pic'
+              span do
+                className: 'name'
+                'ChineseC'
+                small null 'UBES'
+              a do
+                className: 'id'
+                href: 'http://www.chinesecubes.com/'
+                '@chinesecubes'
+          | \thx
+            div do
+              className: 'thx'
+              '謝謝您撥空聆聽！'
       div do
         className: 'now'
         style:
           top: 300
+          opacity: if @state.modal then 0.33 else 1
         moment(@props.now, \X)format('YYYY-MM-DD HH:mm')
       ol do
         className: 'history'
         style:
           top: distance
+          opacity: if @state.modal then 0.33 else 1
         for i, event of history
           hour = event.moment.hour!
           li do

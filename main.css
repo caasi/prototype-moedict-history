@@ -105,6 +105,120 @@ body {
   position: relative;
   overflow: hidden;
 }
+#app .button {
+  position: absolute;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  -webkit-border-radius: 0.2rem;
+  border-radius: 0.2rem;
+  background: #f90;
+}
+#app .button:hover {
+  background: #fa0;
+}
+#app .button.me {
+  right: 1rem;
+  top: 1rem;
+}
+#app .button.cc {
+  right: 1rem;
+  top: 2.3rem;
+}
+#app .button.thx {
+  right: 1rem;
+  top: 3.6rem;
+}
+#app .modal {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+  background: #fff;
+  -webkit-box-shadow: 0.2rem 0.2rem 0.6rem rgba(0,0,0,0.5);
+  box-shadow: 0.2rem 0.2rem 0.6rem rgba(0,0,0,0.5);
+}
+#app .modal .card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+#app .modal .card h1 {
+  position: absolute;
+  top: -1.6rem;
+  width: 10rem;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #eee;
+  z-index: -1;
+}
+#app .modal .card small {
+  font-size: 0.85rem;
+}
+#app .modal .card .pic {
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.5);
+  box-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.5);
+  margin-bottom: 0.5rem;
+}
+#app .modal .card .name,
+#app .modal .card .id {
+  display: block;
+}
+#app .modal .card .name {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+#app .modal .card .id {
+  color: #999;
+  text-decoration: none;
+}
+#app .modal .card .id:hover {
+  text-decoration: underline;
+}
+#app .modal .card.caasi {
+  width: 195px;
+  height: 255px;
+}
+#app .modal .card.caasi .pic {
+  width: 195px;
+  height: 195px;
+  background: url("./img/coil.jpg");
+}
+#app .modal .card.cube {
+  width: 256px;
+  height: 316px;
+}
+#app .modal .card.cube .pic {
+  width: 256px;
+  height: 256px;
+  background: url("./img/cc.png");
+}
+#app .modal .thx {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 10em;
+  font-size: 4rem;
+  font-weight: bold;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+}
 #app .now {
   position: absolute;
   left: 2rem;
