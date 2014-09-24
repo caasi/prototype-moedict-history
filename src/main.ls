@@ -282,7 +282,12 @@ History = React.createClass do
           | \thx
             div do
               className: 'thx'
-              '謝謝您撥空聆聽！'
+              div do
+                className: 'qrcode'
+              a do
+                className: 'url'
+                href: 'http://tinyurl.com/moedict-history'
+                'http://tinyurl.com/moedict-history'
       div do
         className: 'now'
         style:

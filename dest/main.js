@@ -197,7 +197,12 @@
         case 'thx':
           return div({
             className: 'thx'
-          }, '謝謝您撥空聆聽！');
+          }, div({
+            className: 'qrcode'
+          }), a({
+            className: 'url',
+            href: 'http://tinyurl.com/moedict-history'
+          }, 'http://tinyurl.com/moedict-history'));
         }
       }.call(this))), div({
         className: 'now',

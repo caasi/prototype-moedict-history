@@ -237,12 +237,28 @@ body {
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 10em;
-  font-size: 4rem;
-  font-weight: bold;
-  height: 4rem;
-  line-height: 4rem;
-  text-align: center;
+  width: 300px;
+  height: 360px;
+}
+#app .modal .thx .qrcode {
+  width: 300px;
+  height: 300px;
+  background: url("./img/qrcode.png");
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.5);
+  box-shadow: 0.1rem 0.1rem 0.3rem rgba(0,0,0,0.5);
+  margin-bottom: 0.5rem;
+}
+#app .modal .thx .url {
+  position: absolute;
+  display: block;
+  width: 18rem;
+  color: #16161d;
+  text-decoration: none;
+}
+#app .modal .thx .url:hover {
+  text-decoration: underline;
 }
 #app .now {
   position: absolute;
