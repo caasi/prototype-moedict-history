@@ -286,8 +286,8 @@ History = React.createClass do
                 className: 'qrcode'
               a do
                 className: 'url'
-                href: 'http://tinyurl.com/moedict-history'
-                'http://tinyurl.com/moedict-history'
+                href: 'http://summit.g0v.tw'
+                'http://summit.g0v.tw'
       div do
         className: 'now'
         style:

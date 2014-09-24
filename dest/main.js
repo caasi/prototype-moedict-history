@@ -201,8 +201,8 @@
             className: 'qrcode'
           }), a({
             className: 'url',
-            href: 'http://tinyurl.com/moedict-history'
-          }, 'http://tinyurl.com/moedict-history'));
+            href: 'http://summit.g0v.tw'
+          }, 'http://summit.g0v.tw'));
         }
       }.call(this))), div({
         className: 'now',
